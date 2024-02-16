@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import "./App.css";
+import HeroSection from "./Components/HeroSection";
+import About from "./Components/About";
+import Work from "./Components/Work";
+import Contact from "./Components/Contact";
+import Header from "./Components/Header";
+
+// import { HashLink as Link } from "react-router-hash-link";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <HeroSection />
+      <About />
+      <Work />
+      <Contact />
     </div>
   );
 }

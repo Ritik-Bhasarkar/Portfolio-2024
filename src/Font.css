@@ -1,0 +1,114 @@
+/*------------------- Clash Display ------------------- */
+
+@font-face {
+    font-family: 'ClashDisplay-Light';
+    src: url('./Assets/Fonts/Clash\ Display/Fonts/WEB/fonts/ClashDisplay-Light.woff2') format('woff2'),
+        url('./Assets/Fonts/Clash\ Display/Fonts/WEB/fonts/ClashDisplay-Light.woff') format('woff'),
+        url('./Assets/Fonts/Clash\ Display/Fonts/WEB/fonts/ClashDisplay-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'ClashDisplay-Regular';
+    src: url('./Assets/Fonts/Clash\ Display/Fonts/WEB/fonts/ClashDisplay-Regular.woff2') format('woff2'),
+        url('./Assets/Fonts/Clash\ Display/Fonts/WEB/fonts/ClashDisplay-Regular.woff') format('woff'),
+        url('./Assets/Fonts/Clash\ Display/Fonts/WEB/fonts/ClashDisplay-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'ClashDisplay-Medium';
+    src: url('./Assets/Fonts/Clash\ Display/Fonts/WEB/fonts/ClashDisplay-Medium.woff2') format('woff2'),
+        url('./Assets/Fonts/Clash\ Display/Fonts/WEB/fonts/ClashDisplay-Medium.woff') format('woff'),
+        url('./Assets/Fonts/Clash\ Display/Fonts/WEB/fonts/ClashDisplay-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'ClashDisplay-Semibold';
+    src: url('./Assets/Fonts/Clash\ Display/Fonts/WEB/fonts/ClashDisplay-Semibold.woff2') format('woff2'),
+        url('./Assets/Fonts/Clash\ Display/Fonts/WEB/fonts/ClashDisplay-Semibold.woff') format('woff'),
+        url('./Assets/Fonts/Clash\ Display/Fonts/WEB/fonts/ClashDisplay-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'ClashDisplay-Bold';
+    src: url('./Assets/Fonts/Clash\ Display/Fonts/WEB/fonts/ClashDisplay-Bold.woff2') format('woff2'),
+        url('./Assets/Fonts/Clash\ Display/Fonts/WEB/fonts/ClashDisplay-Bold.woff') format('woff'),
+        url('./Assets/Fonts/Clash\ Display/Fonts/WEB/fonts/ClashDisplay-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+} 
+
+
+/*------------------ General Sans -----------------------*/
+
+
+@font-face {
+    font-family: 'GeneralSans-Light';
+    src: url('./Assets/Fonts/General\ Sans/Fonts/WEB/fonts/GeneralSans-Light.woff2') format('woff2'),
+        url('./Assets/Fonts/General\ Sans/Fonts/WEB/fonts/GeneralSans-Light.woff') format('woff'),
+        url('./Assets/Fonts/General\ Sans/Fonts/WEB/fonts/GeneralSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'GeneralSans-Regular';
+    src: url('./Assets/Fonts/General\ Sans/Fonts/WEB/fonts/GeneralSans-Regular.woff2') format('woff2'),
+        url('./Assets/Fonts/General\ Sans/Fonts/WEB/fonts/GeneralSans-Regular.woff') format('woff'),
+        url('./Assets/Fonts/General\ Sans/Fonts/WEB/fonts/GeneralSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'GeneralSans-Medium';
+    src: url('./Assets/Fonts/General\ Sans/Fonts/WEB/fonts/GeneralSans-Medium.woff2') format('woff2'),
+        url('./Assets/Fonts/General\ Sans/Fonts/WEB/fonts/GeneralSans-Medium.woff') format('woff'),
+        url('./Assets/Fonts/General\ Sans/Fonts/WEB/fonts/GeneralSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'GeneralSans-Semibold';
+    src: url('./Assets/Fonts/General\ Sans/Fonts/WEB/fonts/GeneralSans-Semibold.woff2') format('woff2'),
+        url('./Assets/Fonts/General\ Sans/Fonts/WEB/fonts/GeneralSans-Semibold.woff') format('woff'),
+        url('./Assets/Fonts/General\ Sans/Fonts/WEB/fonts/GeneralSans-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'GeneralSans-Bold';
+    src: url('./Assets/Fonts/General\ Sans/Fonts/WEB/fonts/GeneralSans-Bold.woff2') format('woff2'),
+        url('./Assets/Fonts/General\ Sans/Fonts/WEB/fonts/GeneralSans-Bold.woff') format('woff'),
+        url('./Assets/Fonts/General\ Sans/Fonts/WEB/fonts/GeneralSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+
