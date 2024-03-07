@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Hamburger from "./Hamburger";
 import gsap from "gsap";
+
 const Header = () => {
   //state for menu
   const [state, setState] = useState({
@@ -50,11 +51,9 @@ const Header = () => {
     tl.to(spanRefBar1.current, {
       rotation: state.clicked ? 45 : 0,
       duration: 0.1,
-    })
-    .to(spanRefBar2.current, {
+    }).to(spanRefBar2.current, {
       rotation: state.clicked ? -45 : 0,
       duration: 0.1,
-     
     });
 
     tl.play();
@@ -64,7 +63,6 @@ const Header = () => {
     <header className="header" id="header">
       <div className="inner-header">
         <div className="header-logo">HRB.</div>
-
         <div className="menu-wrapper">
           <div
             className="menu-toggle btn"

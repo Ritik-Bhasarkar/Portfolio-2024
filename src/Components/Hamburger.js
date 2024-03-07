@@ -3,6 +3,7 @@ import { HashLink as Link } from "react-router-hash-link";
 import gsap from "gsap";
 import { CiGlobe } from "react-icons/ci";
 
+
 const Hamburger = ({ state }) => {
   //vars for animated dom nodes
   let menu = useRef(null);
