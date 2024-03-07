@@ -5,13 +5,19 @@ import SplitType from "split-type";
 
 const About = () => {
   const heading = useRef(null);
-  const aboutDetailsLarge = useRef(null);
-  const aboutDetailsSmall = useRef(null);
+
+  const aboutDetails = useRef(null);
+
+  const largeTextRef1 = useRef(null);
+  const largeTextRef2 = useRef(null);
+  const largeTextRef3 = useRef(null);
+  const largeTextRef4 = useRef(null);
+  const largeTextRef5 = useRef(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const textElements = [heading, aboutDetailsLarge, aboutDetailsSmall];
+    const textElements = [heading];
 
     textElements.forEach((ref) => {
       const textElement = ref.current;
@@ -26,8 +32,33 @@ const About = () => {
         stagger: { from: "start", amount: 0.2, ease: "power1.out" },
         scrollTrigger: {
           trigger: textElement,
-          start: "top 90%",
-          end: "bottom 90%",
+          start: "top center",
+        },
+      });
+    });
+
+    const largeTextElements = [
+      largeTextRef1,
+      largeTextRef2,
+      largeTextRef3,
+      largeTextRef4,
+      largeTextRef5,
+    ];
+
+    largeTextElements.forEach((ref) => {
+      const largeTextRef = ref.current;
+      const largeText = new SplitType(largeTextRef, { types: "lines" });
+
+      gsap.set(largeTextRef, { autoAlpha: 1 });
+      gsap.set(largeText.lines, { yPercent: 100 });
+
+      gsap.to(largeText.lines, {
+        yPercent: 0,
+        ease: "sine.out",
+        stagger: { amount: 0.2, ease: "power1.out" },
+        scrollTrigger: {
+          trigger: aboutDetails.current,
+          start: "top center",
         },
       });
     });
@@ -49,29 +80,35 @@ const About = () => {
             className="img-section"
           ></div>
           <div className="about-details-container">
-            <div className="about-details large-text-section">
+            <div
+              className="about-details large-text-section"
+              ref={aboutDetails}
+            >
               <div className="large-text">
-                <span>Creative Developer with a</span>
+                <span ref={largeTextRef1}>Creative Developer with a</span>
               </div>
               <div className="large-text">
-                <span>Computer Science background,</span>
+                <span ref={largeTextRef2}>Computer Science background,</span>
               </div>
               <div className="large-text">
-                <span>Crafting immersive</span>
+                <span ref={largeTextRef3}>Crafting immersive</span>
               </div>
               <div className="large-text">
-                <span>experiences that combines</span>
+                <span ref={largeTextRef4}>experiences that combines</span>
               </div>
               <div className="large-text">
-                <span>creativity and functionality.</span>
+                <span ref={largeTextRef5}>creativity and functionality.</span>
               </div>
             </div>
-            <div className="about-details small-text">
-              <span ref={aboutDetailsSmall}>
-                Getting started in Frontend Developer and want to transit into
-                creative developer gives me unique perspective and understanding
-                in merging both visual aesthetics and modern technology
-              </span>
+            <div className="about-details small-text-section">
+              <div className="small-text">
+                <span>
+                  Getting started in Frontend Developer and want to transit into
+                  creative developer gives me unique perspective and
+                  understanding in merging both visual aesthetics and modern
+                  technology
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -81,3 +118,108 @@ const About = () => {
 };
 
 export default About;
+
+/**
+ * import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitType from "split-type";
+
+const About = () => {
+  const heading = useRef(null);
+  const aboutDetails = useRef(null);
+  const aboutDetailsSmall = useRef(null);
+
+  const largeTextData = [
+    "Creative Developer with a",
+    "Computer Science background,",
+    "Crafting immersive",
+    "experiences that combines",
+    "creativity and functionality.",
+  ];
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const textElements = [heading, aboutDetailsSmall];
+    const largeTextRefs = largeTextData.map(() => useRef(null));
+
+    const createSplitType = (element, types) => {
+      const text = new SplitType(element, { types });
+      gsap.set(element, { autoAlpha: 1 });
+      gsap.set(text[types], { yPercent: 100 });
+
+      animateSplitType(text[types], element);
+    };
+
+    const animateSplitType = (target, trigger) => {
+      gsap.to(target, {
+        yPercent: 0,
+        ease: "sine.out",
+        stagger: { from: "start", amount: 0.2, ease: "power1.out" },
+        scrollTrigger: {
+          trigger,
+          start: "top center",
+        },
+      });
+    };
+
+    textElements.forEach((ref) => {
+      const textElement = ref.current;
+      createSplitType(textElement, "chars");
+    });
+
+    largeTextRefs.forEach((ref, index) => {
+      const largeTextRef = ref.current;
+      const largeText = new SplitType(largeTextRef, { types: "lines" });
+
+      gsap.set(largeTextRef, { autoAlpha: 1 });
+      gsap.set(largeText.lines, { yPercent: 100 });
+
+      animateSplitType(largeText.lines, aboutDetails.current);
+    });
+  }, []);
+
+  return (
+    <div data-scroll data-section className="about" id="about">
+      <div data-scroll className="about-container">
+        <div className="about-heading-section">
+          <h2 ref={heading} className="page-heading about-heading">
+            About me.
+          </h2>
+        </div>
+
+        <div className="about-content-section">
+          <div
+            data-scroll
+            data-scroll-speed="0.2"
+            className="img-section"
+          ></div>
+          <div className="about-details-container" ref={aboutDetails}>
+            <div className="about-details large-text-section">
+              {largeTextData.map((text, index) => (
+                <div className="large-text" key={index} ref={largeTextRefs[index]}>
+                  <span>{text}</span>
+                </div>
+              ))}
+            </div>
+            <div className="about-details small-text-section">
+              <div className="small-text">
+                <span ref={aboutDetailsSmall}>
+                  Getting started in Frontend Developer and want to transit into
+                  creative developer gives me a unique perspective and
+                  understanding in merging both visual aesthetics and modern
+                  technology
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default About;
+
+ */

@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <div className="contact" id="contact">
       <div className="page-heading contact-header">
-        <h2> GET IN TOUCH </h2>
+        <span>Follow me and hit me up for future projects or a simple talk.</span>
       </div>
 
       <div className="contacts-boxes">
@@ -62,10 +62,6 @@ const Contact = () => {
           </a>
         </div>
         
-      </div>
-
-      <div className="footer-end">
-        <span>Design and developed by - Ritik Bhasarkar</span>
       </div>
     </div>
   );
