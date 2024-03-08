@@ -55,6 +55,7 @@ const About = () => {
       gsap.to(largeText.lines, {
         yPercent: 0,
         ease: "sine.out",
+        duration:0.5,
         stagger: { amount: 0.2, ease: "power1.out" },
         scrollTrigger: {
           trigger: aboutDetails.current,

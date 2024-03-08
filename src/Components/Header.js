@@ -1,6 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState,useEffect,useRef } from "react";
 import Hamburger from "./Hamburger";
-import gsap from "gsap";
 
 const Header = () => {
   //state for menu
@@ -42,22 +41,12 @@ const Header = () => {
     }
   };
 
-  const spanRefBar1 = useRef(null);
-  const spanRefBar2 = useRef(null);
 
-  useEffect(() => {
-    const tl = gsap.timeline({ paused: true });
+  const hamburgerRef = useRef(null);  
 
-    tl.to(spanRefBar1.current, {
-      rotation: state.clicked ? 45 : 0,
-      duration: 0.1,
-    }).to(spanRefBar2.current, {
-      rotation: state.clicked ? -45 : 0,
-      duration: 0.1,
-    });
+  useEffect(()=>{
 
-    tl.play();
-  }, [state]);
+  },[])
 
   return (
     <header className="header" id="header">
@@ -70,23 +59,38 @@ const Header = () => {
             disabled={disabled}
             onClick={handleMenu}
           >
-            <div className="btn-outline btn-outline-1"></div>
-            <div className="btn-outline btn-outline-2"></div>
-            <div className="menu-toggle-bar">
-              <span
-                className="toggle-span toggle-span-1"
-                ref={spanRefBar1}
-              ></span>
-              <span
-                className="toggle-span toggle-span-2"
-                ref={spanRefBar2}
-              ></span>
-            </div>
+            <div className="toggle-background-color"></div>
+            <svg
+              className="svg-header"
+              width="56"
+              height="7"
+              viewBox="0 0 56 7"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="56"
+                y1="0.5"
+                x2="4.37114e-08"
+                y2="0.500005"
+                stroke="white"
+                stroke-width="2px"
+              />
+
+              <line
+                x1="56"
+                y1="6.5"
+                x2="28"
+                y2="6.5"
+                stroke="white"
+                stroke-width="2px"
+              />
+            </svg>
           </div>
         </div>
       </div>
 
-      <Hamburger state={state} />
+      <Hamburger state={state} handleMenu={handleMenu} />
     </header>
   );
 };

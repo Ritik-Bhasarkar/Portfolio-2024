@@ -26,17 +26,16 @@ const projects = [
     name: "College quora",
     details:
       "A fully functional web application providing an exclusive online platform for college students to ask and answer questions with their academic community. Leveraging Firebase for secure user authentication. Implemented React components with state management Redux ",
-    src1: require("../Assets/Images/stocker1.png"),
-    src2: require("../Assets/Images/stocker2.png"),
+    src2: require("../Assets/Images/quora-1.png"),
+    src1: require("../Assets/Images/quora2.png"),
     year: "2022",
   },
 ];
 
 const Work = () => {
   const containerRef = useRef(null);
-  const lineRef = useRef(null);
-
   const heading = useRef(null);
+  const lineRef = useRef(null);
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -70,10 +69,8 @@ const Work = () => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
-          start: "top 90%",
-          end: "top 80%",
-          scrub: 1,
-          // markers: true,
+          start: "bottom 100%",
+          end: "50% 8%",
         },
       });
 
@@ -81,7 +78,8 @@ const Work = () => {
         y: "-25%",
         rotation: "6deg",
         ease: "none",
-        duration: 0.1,
+        duration: 0.01,
+        yoyo: true,
       });
 
       tl.to(
@@ -91,7 +89,8 @@ const Work = () => {
           y: "-75%",
           rotation: "-4deg",
           ease: "none",
-          duration: 0.1,
+          duration: 0.01,
+          yoyo: true,
         },
         "0"
       );
