@@ -152,12 +152,12 @@ const Hamburger = ({ state, handleMenu }) => {
           </div>
         </div>
         <div className="nav-footer">
-          <div className="current-date-time">
-            <div className="current-time-global">
-              <CiGlobe />
-            </div>
+          <div className="current-time-section">
             <div className="current-time">
-              INDIA - {date.toLocaleTimeString("en-GB")}
+              <CiGlobe className="globe" />
+              <div>
+                INDIA - {date.toLocaleTimeString("en-GB")}
+              </div>
             </div>
           </div>
           <div className="social-handles">

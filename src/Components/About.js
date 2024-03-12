@@ -75,11 +75,8 @@ const About = () => {
         </div>
 
         <div className="about-content-section">
-          <div
-            data-scroll
-            data-scroll-speed="0.2"
-            className="img-section"
-          ></div>
+          <div data-scroll data-scroll-speed="0.2" className="img-section">
+          </div>
           <div className="about-details-container">
             <div
               className="about-details large-text-section"

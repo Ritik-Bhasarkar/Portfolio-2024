@@ -74,13 +74,12 @@ const HeroSection = () => {
               Hi there, I'm
             </h1>
             <h1 ref={nameRef} className="hero-name-name">
-              Ritik Bhasarkar .
+              Ritik Bhasarkar.
             </h1>
           </div>
           <div className="hero-name-info">
             <h3 ref={positionRef} className="hero-name-position">
-              A Frontend Developer and Designer propelling imagination to
-              reality
+              A frontend developer and web designer <br/> propelling imagination to reality
             </h3>
           </div>
         </div>

@@ -23,7 +23,7 @@ function App() {
       <HeroSection />
       <About />
       <Work />
-      <Contact />
+      {/* <Contact /> */}
     </div>
   );
 }
