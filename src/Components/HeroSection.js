@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import Resume from "../Assets/Resume/resume.pdf";
+import Resume from "../Assets/Resume/Ritik-Bhasarkar.pdf";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
@@ -7,7 +7,7 @@ import SplitType from "split-type";
 const HeroSection = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.download = "Resume-PDF-File";
+    link.download = "Ritik-Bhasakar-Resume";
     link.href = Resume;
     link.click();
   };
