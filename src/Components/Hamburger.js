@@ -155,16 +155,14 @@ const Hamburger = ({ state, handleMenu }) => {
           <div className="current-time-section">
             <div className="current-time">
               <CiGlobe className="globe" />
-              <div>
-                INDIA - {date.toLocaleTimeString("en-GB")}
-              </div>
+              <div>INDIA - {date.toLocaleTimeString("en-GB")}</div>
             </div>
           </div>
           <div className="social-handles">
             <ul>
               <li className="li">
                 <a
-                  href="https://drive.google.com/file/d/1HNqkb0QCtlhWjZ0lMb3vsgUCSG-krEOw/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1W85NwU0BDTii-I9Kj8SOkYAeOxTliaVa/view?usp=sharing"
                   target="_blank"
                   rel="noreferrer"
                 >
