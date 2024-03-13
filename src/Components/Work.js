@@ -52,7 +52,7 @@ const Work = () => {
     gsap.to(text.chars, {
       yPercent: 0,
       ease: "sine.out",
-      stagger: { from: "start", amount: 0.2, ease: "power1.out" },
+      stagger: { from: "start", amount: 0.2 },
       scrollTrigger: {
         trigger: heading.current,
         start: "top center",
@@ -76,7 +76,7 @@ const Work = () => {
 
       tl.to(section.querySelector(".img1"), {
         y: "-25%",
-        rotation: "6deg",
+        rotation: "4deg",
         ease: "none",
         duration: 0.01,
         yoyo: true,
@@ -131,7 +131,7 @@ const Work = () => {
                   <span ref={lineRef} className="horizontal-line"></span>
                 </span>
                 <div className="work-container">
-                  <div className="work-section-details">
+                  <div data-scroll data-scroll-section data-scroll-speed='-0.03' className="work-section-details">
                     <>
                       <h2 className="project-name">{project.name}</h2>
                       <p>{project.details}</p>
@@ -149,6 +149,7 @@ const Work = () => {
                         className="image img1"
                         src={project.src1}
                         alt=""
+                        
                       ></img>
                       <img
                         className="image img2"

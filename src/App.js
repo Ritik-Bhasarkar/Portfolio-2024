@@ -18,12 +18,12 @@ function App() {
   });
 
   return (
-    <div data-scroll data-sontainer className="App">
+    <div className="App">
       <Header />
       <HeroSection />
       <About />
       <Work />
-      {/* <Contact /> */}
+      <Contact />
     </div>
   );
 }

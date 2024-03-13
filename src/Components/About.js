@@ -8,6 +8,8 @@ const About = () => {
 
   const aboutDetails = useRef(null);
 
+  const smallTextRef1 = useRef(null);
+
   const largeTextRef1 = useRef(null);
   const largeTextRef2 = useRef(null);
   const largeTextRef3 = useRef(null);
@@ -17,19 +19,19 @@ const About = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const textElements = [heading];
+    const textElements = [heading, smallTextRef1];
 
     textElements.forEach((ref) => {
       const textElement = ref.current;
       const text = new SplitType(textElement, { types: "chars" });
 
       gsap.set(textElement, { autoAlpha: 1 });
-      gsap.set(text.chars, { yPercent: 100 });
+      gsap.set(text.chars, { yPercent: 400 });
 
       gsap.to(text.chars, {
         yPercent: 0,
         ease: "sine.out",
-        stagger: { from: "start", amount: 0.2, ease: "power1.out" },
+        stagger: { from: "start", amount: 0.2},
         scrollTrigger: {
           trigger: textElement,
           start: "top center",
@@ -55,14 +57,18 @@ const About = () => {
       gsap.to(largeText.lines, {
         yPercent: 0,
         ease: "sine.out",
-        duration:0.5,
+        duration: 0.5,
         stagger: { amount: 0.2, ease: "power1.out" },
         scrollTrigger: {
           trigger: aboutDetails.current,
-          start: "top center",
+          start: "end center",
         },
       });
     });
+
+  
+
+    
   }, []);
 
   return (
@@ -75,21 +81,24 @@ const About = () => {
         </div>
 
         <div className="about-content-section">
-          <div data-scroll data-scroll-speed="0.2" className="img-section">
-          </div>
+          <div
+            data-scroll
+            data-scroll-speed="0.2"
+            className="img-section"
+          ></div>
           <div className="about-details-container">
             <div
               className="about-details large-text-section"
               ref={aboutDetails}
             >
               <div className="large-text">
-                <span ref={largeTextRef1}>Creative Developer with a</span>
+                <span ref={largeTextRef1}>Creative developer with a</span>
               </div>
               <div className="large-text">
-                <span ref={largeTextRef2}>Computer Science background,</span>
+                <span ref={largeTextRef2}>computer science background,</span>
               </div>
               <div className="large-text">
-                <span ref={largeTextRef3}>Crafting immersive</span>
+                <span ref={largeTextRef3}>crafting immersive</span>
               </div>
               <div className="large-text">
                 <span ref={largeTextRef4}>experiences that combines</span>
@@ -100,7 +109,7 @@ const About = () => {
             </div>
             <div className="about-details small-text-section">
               <div className="small-text">
-                <span>
+                <span ref={smallTextRef1}>
                   Getting started in Frontend Developer and want to transit into
                   creative developer gives me unique perspective and
                   understanding in merging both visual aesthetics and modern

@@ -16,6 +16,8 @@ const HeroSection = () => {
   const nameRef = useRef(null);
   const positionRef = useRef(null);
 
+  const namePlateRef = useRef(null);
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -31,7 +33,7 @@ const HeroSection = () => {
         yPercent: 0,
         ease: "sine.out",
         stagger: { from: "start", amount: 0.2, ease: "power1.out" },
-        onComplete: fadeOutAnimation(textElement),
+        // onComplete: fadeOutAnimation(textElement),
       });
     });
 
@@ -48,17 +50,17 @@ const HeroSection = () => {
       ease: "sine.out",
       stagger: { from: "start", amount: 0.1, ease: "power1.out" },
       delay: 0.5,
-      onComplete: fadeOutAnimation(positionRef.current),
+      // onComplete: fadeOutAnimation(positionRef.current),
+      onComplete: fadeOutAnimation,
     });
 
-    function fadeOutAnimation(item) {
-      gsap.to(item, {
+    function fadeOutAnimation() {
+      gsap.to(namePlateRef.current, {
         opacity: 0,
-        duration: 0.5,
         scrollTrigger: {
-          trigger: item,
-          start: "top 20%",
-          end: "+=" + window.innerHeight / 10,
+          trigger: namePlateRef.current,
+          start: "55% center",
+          end: "+=250",
           scrub: 1,
         },
       });
@@ -68,7 +70,12 @@ const HeroSection = () => {
   return (
     <div data-scroll data-section className="hero-section">
       <div className="hero-container">
-        <div data-scroll data-scroll-speed="-0.3" className="hero-name-plate">
+        <div
+          ref={namePlateRef}
+          data-scroll
+          data-scroll-speed="-0.2"
+          className="hero-name-plate"
+        >
           <div className="hero-name">
             <h1 ref={pronounRef} className="hero-name-pronouns">
               Hi there, I'm
@@ -79,7 +86,8 @@ const HeroSection = () => {
           </div>
           <div className="hero-name-info">
             <h3 ref={positionRef} className="hero-name-position">
-              A frontend developer and web designer <br/> propelling imagination to reality
+              A frontend developer and web designer <br /> propelling
+              imagination to reality
             </h3>
           </div>
         </div>

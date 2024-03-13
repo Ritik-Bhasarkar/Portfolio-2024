@@ -1,5 +1,6 @@
-import React, { useState,useEffect,useRef } from "react";
+import React, { useState } from "react";
 import Hamburger from "./Hamburger";
+import { HashLink as Link } from "react-router-hash-link";
 
 const Header = () => {
   //state for menu
@@ -42,16 +43,14 @@ const Header = () => {
   };
 
 
-  const hamburgerRef = useRef(null);  
-
-  useEffect(()=>{
-
-  },[])
-
   return (
     <header className="header" id="header">
       <div className="inner-header">
-        <div className="header-logo">HRB.</div>
+        <div className="header-logo">
+          <Link to={'#'}>
+            HRB.
+          </Link>
+          </div>
         <div className="menu-wrapper">
           <div
             className="menu-toggle btn"
