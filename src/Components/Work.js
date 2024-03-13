@@ -12,6 +12,7 @@ const projects = [
     src1: require("../Assets/Images/stocker1.png"),
     src2: require("../Assets/Images/stocker2.png"),
     year: "2023",
+    url: "https://stock-checker-alpha-two.vercel.app/",
   },
   {
     name: "Toonify",
@@ -20,6 +21,7 @@ const projects = [
     src1: require("../Assets/Images/Toonify1.png"),
     src2: require("../Assets/Images/toonify2.png"),
     year: "2022",
+    url: "https://github.com/Ritik-Bhasarkar/Music-Recommendation-using-Facial-Emotion",
   },
 
   {
@@ -29,6 +31,7 @@ const projects = [
     src2: require("../Assets/Images/quora-1.png"),
     src1: require("../Assets/Images/quora2.png"),
     year: "2022",
+    url: "https://github.com/Ritik-Bhasarkar/Campus-Quora",
   },
 ];
 
@@ -113,6 +116,11 @@ const Work = () => {
     });
   }, []);
 
+
+  const handleURl =()=>{
+
+  }
+
   return (
     <div className="work" id="work">
       <div className="work-head">
@@ -131,17 +139,25 @@ const Work = () => {
                   <span ref={lineRef} className="horizontal-line"></span>
                 </span>
                 <div className="work-container">
-                  <div data-scroll data-scroll-section data-scroll-speed='-0.03' className="work-section-details">
+                  <div
+                    data-scroll
+                    data-scroll-section
+                    data-scroll-speed="-0.03"
+                    className="work-section-details"
+                  >
                     <>
                       <h2 className="project-name">{project.name}</h2>
                       <p>{project.details}</p>
                     </>
-                    <div className="visit-section">
-                      <a href="sd" className="visit">
-                        Visit site
-                      </a>
+                    <a
+                      className="visit-section"
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="visit">Visit site</span>
                       <GoArrowUpRight className="arrow-upward" />
-                    </div>
+                    </a>
                   </div>
                   <div className="work-section-image">
                     <div className="images">
@@ -149,7 +165,6 @@ const Work = () => {
                         className="image img1"
                         src={project.src1}
                         alt=""
-                        
                       ></img>
                       <img
                         className="image img2"

@@ -8,7 +8,7 @@ const About = () => {
 
   const aboutDetails = useRef(null);
 
-  const smallTextRef1 = useRef(null);
+  const smallTextRef = useRef(null);
 
   const largeTextRef1 = useRef(null);
   const largeTextRef2 = useRef(null);
@@ -19,19 +19,19 @@ const About = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const textElements = [heading, smallTextRef1];
+    const textElements = [heading];
 
     textElements.forEach((ref) => {
       const textElement = ref.current;
       const text = new SplitType(textElement, { types: "chars" });
 
       gsap.set(textElement, { autoAlpha: 1 });
-      gsap.set(text.chars, { yPercent: 400 });
+      gsap.set(text.chars, { yPercent: 100 });
 
       gsap.to(text.chars, {
         yPercent: 0,
         ease: "sine.out",
-        stagger: { from: "start", amount: 0.2},
+        stagger: { from: "start", amount: 0.2 },
         scrollTrigger: {
           trigger: textElement,
           start: "top center",
@@ -58,7 +58,7 @@ const About = () => {
         yPercent: 0,
         ease: "sine.out",
         duration: 0.5,
-        stagger: { amount: 0.2, ease: "power1.out" },
+        stagger: { amount: 0.1 },
         scrollTrigger: {
           trigger: aboutDetails.current,
           start: "end center",
@@ -66,9 +66,20 @@ const About = () => {
       });
     });
 
-  
+    const smallText = new SplitType(smallTextRef.current, { types: "lines" });
+    gsap.set(smallTextRef.current, { autoAlpha: 1 });
+    gsap.set(smallText.lines, { yPercent: 400 });
 
-    
+    gsap.to(smallText.lines, {
+      yPercent: 0,
+      ease: "sine.out",
+      duration: 0.5,
+      stagger: { amount: 0.2 },
+      scrollTrigger: {
+        trigger: aboutDetails.current,
+        start: "bottom center",
+      },
+    });
   }, []);
 
   return (
@@ -109,11 +120,11 @@ const About = () => {
             </div>
             <div className="about-details small-text-section">
               <div className="small-text">
-                <span ref={smallTextRef1}>
-                  Getting started in Frontend Developer and want to transit into
-                  creative developer gives me unique perspective and
-                  understanding in merging both visual aesthetics and modern
-                  technology
+                <span ref={smallTextRef}>
+                  Getting started in Frontend Developer and want <br /> to
+                  transit into creative developer gives me unique <br />
+                  perspective and understanding in merging both
+                  <br /> visual aesthetics and modern technology
                 </span>
               </div>
             </div>
@@ -125,108 +136,3 @@ const About = () => {
 };
 
 export default About;
-
-/**
- * import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import SplitType from "split-type";
-
-const About = () => {
-  const heading = useRef(null);
-  const aboutDetails = useRef(null);
-  const aboutDetailsSmall = useRef(null);
-
-  const largeTextData = [
-    "Creative Developer with a",
-    "Computer Science background,",
-    "Crafting immersive",
-    "experiences that combines",
-    "creativity and functionality.",
-  ];
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const textElements = [heading, aboutDetailsSmall];
-    const largeTextRefs = largeTextData.map(() => useRef(null));
-
-    const createSplitType = (element, types) => {
-      const text = new SplitType(element, { types });
-      gsap.set(element, { autoAlpha: 1 });
-      gsap.set(text[types], { yPercent: 100 });
-
-      animateSplitType(text[types], element);
-    };
-
-    const animateSplitType = (target, trigger) => {
-      gsap.to(target, {
-        yPercent: 0,
-        ease: "sine.out",
-        stagger: { from: "start", amount: 0.2, ease: "power1.out" },
-        scrollTrigger: {
-          trigger,
-          start: "top center",
-        },
-      });
-    };
-
-    textElements.forEach((ref) => {
-      const textElement = ref.current;
-      createSplitType(textElement, "chars");
-    });
-
-    largeTextRefs.forEach((ref, index) => {
-      const largeTextRef = ref.current;
-      const largeText = new SplitType(largeTextRef, { types: "lines" });
-
-      gsap.set(largeTextRef, { autoAlpha: 1 });
-      gsap.set(largeText.lines, { yPercent: 100 });
-
-      animateSplitType(largeText.lines, aboutDetails.current);
-    });
-  }, []);
-
-  return (
-    <div data-scroll data-section className="about" id="about">
-      <div data-scroll className="about-container">
-        <div className="about-heading-section">
-          <h2 ref={heading} className="page-heading about-heading">
-            About me.
-          </h2>
-        </div>
-
-        <div className="about-content-section">
-          <div
-            data-scroll
-            data-scroll-speed="0.2"
-            className="img-section"
-          ></div>
-          <div className="about-details-container" ref={aboutDetails}>
-            <div className="about-details large-text-section">
-              {largeTextData.map((text, index) => (
-                <div className="large-text" key={index} ref={largeTextRefs[index]}>
-                  <span>{text}</span>
-                </div>
-              ))}
-            </div>
-            <div className="about-details small-text-section">
-              <div className="small-text">
-                <span ref={aboutDetailsSmall}>
-                  Getting started in Frontend Developer and want to transit into
-                  creative developer gives me a unique perspective and
-                  understanding in merging both visual aesthetics and modern
-                  technology
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default About;
-
- */

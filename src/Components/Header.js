@@ -48,7 +48,7 @@ const Header = () => {
       <div className="inner-header">
         <div className="header-logo">
           <Link to={'#'}>
-            HRB.
+            RDB.
           </Link>
           </div>
         <div className="menu-wrapper">
