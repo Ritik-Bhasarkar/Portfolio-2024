@@ -121,7 +121,7 @@ const About = () => {
             <div className="about-details small-text-section">
               <div className="small-text">
                 <span ref={smallTextRef}>
-                  Getting started in Frontend Developer and want <br /> to
+                  Getting started as Frontend Developer and want <br /> to
                   transit into creative developer gives me unique <br />
                   perspective and understanding in merging both
                   <br /> visual aesthetics and modern technology
