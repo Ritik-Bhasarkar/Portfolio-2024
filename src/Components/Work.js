@@ -115,12 +115,6 @@ const Work = () => {
       });
     });
   }, []);
-
-
-  const handleURl =()=>{
-
-  }
-
   return (
     <div className="work" id="work">
       <div className="work-head">

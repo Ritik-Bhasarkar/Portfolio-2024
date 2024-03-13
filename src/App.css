@@ -192,7 +192,7 @@ html.lenis {
 
 .hamburger-menu{
   display: none;
-  z-index: 1;
+  z-index: 4;
   position: fixed;
   top: 0;
   right: 0;
@@ -225,6 +225,7 @@ html.lenis {
   align-items: center;
   flex: 1;
   overflow: hidden;
+  
 }
 
 .svg-lines{
@@ -954,10 +955,10 @@ color:var(--heading-font-color);
 }
 
 .clip-container{
-  font-size: 1.5rem;
-    font-family: var(--header-regular);
-    text-transform: uppercase;
-    width: 100%;
+  font-size: clamp(1rem, 1.338vw + 0.358rem, 1.5rem);
+  font-family: var(--header-regular);
+  text-transform: uppercase;
+  width: 100%;
 }
 
 .footer-text:hover>div {
@@ -968,12 +969,12 @@ color:var(--heading-font-color);
   color: var(--primary-Dark);
   text-align: left;
   text-shadow: 1px 1px 2px var(--primary-Dark);
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 1.873vw + 0.901rem, 2.5rem);
   font-family: var(--header-semibold);
 }
 
 .arrow-icon{
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 4.013vw + 0.574rem, 4rem);
   border: 1px solid black;
   padding: 10px;
   border-radius: 50%;
@@ -1015,5 +1016,9 @@ color:var(--heading-font-color);
 @media (max-width:426px){
   .contact-header > span{
     line-height: 1;
+  }
+
+  .clip-div{
+    display: none;
   }
 }
